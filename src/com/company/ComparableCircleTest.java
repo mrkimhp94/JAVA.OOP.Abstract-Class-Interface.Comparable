@@ -1,5 +1,7 @@
 package com.company;
 import java.util.Arrays;
+import java.util.Comparator;
+
 public class ComparableCircleTest {
     public static void main(String[] args) {
         ComparableCircle[] circles = new ComparableCircle[3];
@@ -11,11 +13,15 @@ public class ComparableCircleTest {
         for (ComparableCircle circle : circles) {
             System.out.println(circle);
         }
-
+        Comparator circleComparator = new CircleComparator();
+        Arrays.sort(circles, circleComparator);
         Arrays.sort(circles);
 
         System.out.println("After-sorted:");
         for (ComparableCircle circle : circles) {
+            System.out.println(circle);
+        }
+        for (Circle circle : circles) {
             System.out.println(circle);
         }
     }
